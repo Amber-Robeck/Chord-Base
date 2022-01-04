@@ -12,3 +12,13 @@ button.on("click", function(){
 var dditem = $(".dropdown-menu")
 dditem.toggle('is-active');
 })
+var ddContent = $(".dropdown-content")
+ddContent.on("click", function(event){
+    //event.target
+    console.log(event.target.innerText)
+
+    var dditem = $("dropdown-item")
+    //console.log(dditem.val)
+
+
+})
