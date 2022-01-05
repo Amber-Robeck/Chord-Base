@@ -21,7 +21,7 @@ ddContent.on("click", function (event) {
     //     }).then(function (response) {
     //         console.log(response);
     //     })
-    fetch("https:api.uberchord.com/v1/chords/" + userSelect)
+    fetch("https://api.uberchord.com/v1/chords/" + userSelect)
         .then(function (response) {
             console.log(response);
         })
