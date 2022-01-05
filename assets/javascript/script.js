@@ -14,11 +14,16 @@ ddContent.on("click", function (event) {
     userSelect = event.target.innerText
     console.log(userSelect)
 
-    $.ajax({
-        // url: urlRootEl + userSelect,
-        url: "https:api.uberchord.com/v1/chords/" + userSelect,
-        method: "GET"
-    }).then(function (response) {
-        console.log(response);
-    })
+    //     $.ajax({
+    //         // url: urlRootEl + userSelect,
+    //         url: "https:api.uberchord.com/v1/chords/" + userSelect,
+    //         method: "GET"
+    //     }).then(function (response) {
+    //         console.log(response);
+    //     })
+    fetch("https:api.uberchord.com/v1/chords/" + userSelect)
+        .then(function (response) {
+            console.log(response);
+        })
 })
+
