@@ -1,5 +1,5 @@
 var userSelect = "";
-var urlRootEl = "https:api.uberchord.com/v1/chords/";
+// var urlRootEl = "https:api.uberchord.com/v1/chords/";
 var button = $(".button")
 var ddContent = $(".dropdown-content")
 
@@ -15,8 +15,8 @@ ddContent.on("click", function (event) {
     console.log(userSelect)
 
     $.ajax({
-        url: urlRootEl + userSelect,
-        // url: "https:api.uberchord.com/v1/chords/F_maj7",
+        // url: urlRootEl + userSelect,
+        url: "https:api.uberchord.com/v1/chords/" + userSelect,
         method: "GET"
     }).then(function (response) {
         console.log(response);
