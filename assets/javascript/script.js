@@ -36,7 +36,7 @@ ddContent.on("click", function (event) {
             $(chordIcon).attr("src", "https://chordify.net/img/diagrams/guitar/" + userSelect + ".png");
             // https://chordify.net/img/diagrams/guitar/A_maj.png
 
-            alert(userSelect.slice(0, 1));
+            //alert(userSelect.slice(0, 1));
             // alert(userSelect.substring(1));
         })
 })
