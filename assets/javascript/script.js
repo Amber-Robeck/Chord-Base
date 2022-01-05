@@ -2,7 +2,10 @@ var userSelect = "";
 // var urlRootEl = "https:api.uberchord.com/v1/chords/";
 var button = $(".button")
 var ddContent = $(".dropdown-content")
+var userSelectBox = $("#userSelectBox")
 
+// $(<"p">)
+userSelectBox.text("It's working")
 
 button.on("click", function () {
     var dditem = $(".dropdown-menu")
@@ -14,16 +17,22 @@ ddContent.on("click", function (event) {
     userSelect = event.target.innerText
     console.log(userSelect)
 
-    //     $.ajax({
-    //         // url: urlRootEl + userSelect,
-    //         url: "https:api.uberchord.com/v1/chords/" + userSelect,
-    //         method: "GET"
-    //     }).then(function (response) {
-    //         console.log(response);
-    //     })
     fetch("https://api.uberchord.com/v1/chords/" + userSelect)
         .then(function (response) {
-            console.log(response);
+            return response.json();
+            // console.log(response.json());
+        }).then(function (data) {
+            console.log(data)
+            //number of what finger to use on each string
+            console.log(data[0].fingering)
+            //what strings are being pressed on what fret down to make chord
+            console.log(data[0].strings)
+            //adding api data to user screen
+            userSelectBox.text("Fingering style: " + data[0].fingering + " Strings: " + data[0].strings)
+            //adding userselect to img currently only working on c and f as they are the only img this site has
+            //TODO: find a source for all images
+            var chordIcon = $("#icon")
+            $(chordIcon).attr("src", "https://api.uberchord.com/examples/" + userSelect + ".svg");
         })
 })
 
