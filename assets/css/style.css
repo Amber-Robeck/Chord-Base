@@ -1,0 +1,12 @@
+section {
+    background-image: url(https://www.freewebheaders.com/wp-content/gallery/music/classical-guitar-player-header.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+}
+
+.subtitle, .title {
+    color: whitesmoke;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
