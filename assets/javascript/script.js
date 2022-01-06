@@ -32,8 +32,11 @@ ddContent.on("click", function (event) {
             //adding api data to user screen
             userSelectBox.text("Fingering style: " + data[0].fingering + " Strings: " + data[0].strings)
             //Adding user select fingering diagram icon to page
+            // var chordIcon = $("#icon")
+            // $(chordIcon).attr("src", "https://chordify.net/img/diagrams/guitar/" + userSelect + ".png");
             var chordIcon = $("#icon")
-            $(chordIcon).attr("src", "https://chordify.net/img/diagrams/guitar/" + userSelect + ".png");
+            $(chordIcon).attr("src", "assets/images/chordImg/" + userSelect.slice(0, 1) + ".png");
+
 
         })
 })
