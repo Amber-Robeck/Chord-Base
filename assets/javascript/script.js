@@ -17,6 +17,7 @@ ddContent.on("click", function (event) {
     console.log(userSelect)
     dditem.toggle('is-active');
     saveLocalS(userSelect);
+    var insBtn = $('#scapiobjid1').attr('chord', userSelect)
 
     fetch("https://api.uberchord.com/v1/chords/" + userSelect.slice(0, 1))
         .then(function (response) {
