@@ -1,5 +1,5 @@
-section {
-    background-image: url(https://www.freewebheaders.com/wp-content/gallery/music/classical-guitar-player-header.jpg);
+section  {
+    background-image: url("https://www.freewebheaders.com/wp-content/gallery/music/classical-guitar-player-header.jpg");
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
