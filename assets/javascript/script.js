@@ -5,72 +5,47 @@ var userSelectBox = $("#userSelectBox")
 var dditem = $(".dropdown-menu")
 var instructionL = $("#instructionL")
 
-// $(<"p">)
-userSelectBox.text("It's working")
-
+//change location to instuction page on click
 instructionL.on("click", function () {
     window.location.href = ("instruction.html")
-
 });
 
+//toggle list back to hidden
 button.on("click", function () {
     dditem.toggle('is-active');
 })
 
-
+//click to save user content
 ddContent.on("click", function (event) {
     userSelect = event.target.innerText
-    console.log(userSelect)
+    // console.log(userSelect)
     dditem.toggle('is-active');
     saveLocalS(userSelect);
     var insBtn = $('#scapiobjid1').attr('chord', userSelect)
+    //TODO:Change source to current mp3 track
     getApi();
-
-    // fetch("https://api.uberchord.com/v1/chords/" + userSelect.slice(0, 1))
-    //     .then(function (response) {
-    //         return response.json();
-    //         // console.log(response.json());
-    //     }).then(function (data) {
-    //         console.log(data)
-    //         //number of what finger to use on each string
-    //         console.log(data[0].fingering)
-    //         //what strings are being pressed on what fret down to make chord
-    //         console.log(data[0].strings)
-    //         //adding api data to user screen
-    //         userSelectBox.text("Fingering style: " + data[0].fingering + " Strings: " + data[0].strings)
-    //         //Adding user select fingering diagram icon to page
-    //         // var chordIcon = $("#icon")
-    //         // $(chordIcon).attr("src", "https://chordify.net/img/diagrams/guitar/" + userSelect + ".png");
-    //         var chordIcon = $("#icon")
-    //         $(chordIcon).attr("src", "assets/images/chordImg/" + userSelect.slice(0, 1) + ".png");
-
-
-    //     })
 })
 
 function getApi() {
-
-
-
     fetch("https://api.uberchord.com/v1/chords/" + userSelect.slice(0, 1))
         .then(function (response) {
             return response.json();
             // console.log(response.json());
         }).then(function (data) {
             console.log(data)
+
             //number of what finger to use on each string
             console.log(data[0].fingering)
             //what strings are being pressed on what fret down to make chord
-            console.log(data[0].strings)
             //adding api data to user screen
+
+            //TODO: Add chord name to box
             userSelectBox.text("Fingering style: " + data[0].fingering + " Strings: " + data[0].strings)
             //Adding user select fingering diagram icon to page
-            // var chordIcon = $("#icon")
-            // $(chordIcon).attr("src", "https://chordify.net/img/diagrams/guitar/" + userSelect + ".png");
+
+            //TODO: make sure the variations of chords come up
             var chordIcon = $("#icon")
             $(chordIcon).attr("src", "assets/images/chordImg/" + userSelect.slice(0, 1) + ".png");
-
-
         })
 }
 
@@ -99,8 +74,6 @@ function getLocalS() {
     } else {
         userSelect = "C"
         getApi(userSelect);
-        // var saveChord = $("<div>");
-        // saveChord.text("current saved " + getStorage[0]);
         console.log("you don't have any favorites")
     }
 
