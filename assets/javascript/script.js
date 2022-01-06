@@ -10,7 +10,7 @@ userSelectBox.text("It's working")
 
 instructionL.on("click", function () {
     window.location.href = ("instruction.html")
-    
+
 });
 
 button.on("click", function () {
@@ -49,8 +49,13 @@ ddContent.on("click", function (event) {
 
 var local = [];
 function saveLocalS(info) {
-    local.push(info);
-    localStorage.setItem("FavChord", JSON.stringify(local));
+    if (localStorage.getItem("FavChord")) {
+        local.splice(0, 1, info);
+        localStorage.setItem("FavChord", JSON.stringify(local[0]));
+    } else {
+        local.push(info);
+        localStorage.setItem("FavChord", JSON.stringify(local[0]));
+    }
 };
 
 var getStorage = [];
@@ -63,6 +68,9 @@ function getLocalS() {
         console.log(typeof getStorage);
         console.log(getStorage[0]);
     } else {
+        // getStorage = ["C"]
+        // var saveChord = $("<div>");
+        // saveChord.text("current saved " + getStorage[0]);
         console.log("you don't have any favorites")
     }
 
