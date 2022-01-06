@@ -3,9 +3,15 @@ var button = $(".button")
 var ddContent = $(".dropdown-content")
 var userSelectBox = $("#userSelectBox")
 var dditem = $(".dropdown-menu")
+var instructionL = $("#instructionL")
 
 // $(<"p">)
 userSelectBox.text("It's working")
+
+instructionL.on("click", function () {
+    window.location.href = ("instruction.html")
+    
+});
 
 button.on("click", function () {
     dditem.toggle('is-active');
