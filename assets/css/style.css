@@ -10,3 +10,9 @@ section {
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
