@@ -3,6 +3,7 @@ var userSelect = "";
 var button = $(".button")
 var ddContent = $(".dropdown-content")
 var userSelectBox = $("#userSelectBox")
+var dditem = $(".dropdown-menu")
 var instructionL = $("#instructionL")
 
 // $(<"p">)
