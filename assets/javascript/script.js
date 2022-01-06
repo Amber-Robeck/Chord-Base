@@ -16,6 +16,7 @@ ddContent.on("click", function (event) {
     userSelect = event.target.innerText
     console.log(userSelect)
     dditem.toggle('is-active');
+    saveLocalS(userSelect);
 
     fetch("https://api.uberchord.com/v1/chords/" + userSelect.slice(0, 1))
         .then(function (response) {
@@ -35,4 +36,26 @@ ddContent.on("click", function (event) {
 
         })
 })
+
+var local = [];
+function saveLocalS(info) {
+    local.push(info);
+    localStorage.setItem("FavChord", JSON.stringify(local));
+};
+
+var getStorage = [];
+function getLocalS() {
+    if (localStorage.getItem("FavChord")) {
+        var saveChord = $("<div>");
+        var getStorage = JSON.parse(localStorage.getItem("FavChord"));
+        userSelectBox.append(saveChord)
+        saveChord.text("current saved " + getStorage[0]);
+        console.log(typeof getStorage);
+        console.log(getStorage[0]);
+    } else {
+        console.log("you don't have any favorites")
+    }
+
+}
+getLocalS();
 
