@@ -4,7 +4,6 @@ section {
     background-size:cover;
     background-position: center;
 }
-
 .subtitle, .title {
     color: whitesmoke;
     font-family:Georgia, 'Times New Roman', Times, serif;
@@ -15,4 +14,11 @@ section {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+}
+#userSelectBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
 }
