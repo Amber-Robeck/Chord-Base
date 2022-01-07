@@ -9,7 +9,8 @@ section {
 }
 
 .container {
-    margin: 20px;
+    margin: auto;
+    margin-top: 40px;
 }
 
 #homeButton {
@@ -25,6 +26,7 @@ section {
 
 footer {
     text-align: center;
+    margin-top: 40px;
 }
 
 
