@@ -16,9 +16,9 @@ section  {
     margin-top: 10px;
 }
 #userSelectBox {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     font-weight: bold;
     font-size: 24px;
 }

@@ -20,7 +20,7 @@ ddContent.on("click", function (event) {
     userSelect = event.target.innerText
     dditem.toggle('is-active');
     saveLocalS(userSelect);
-    console.log(userSelect.slice(0, 1))
+    // console.log(userSelect.slice(0, 1))
     var chordAb = $('#scapiobjid1')
 
 
@@ -62,9 +62,14 @@ function getApi() {
             console.log(data[0].fingering)
             //what strings are being pressed on what fret down to make chord
             //adding api data to user screen
+            var name = $("#apiName")
+            var strings = $("#apiStrings")
+            var fingering = $("#apiFingering")
+            fingering.text("Fingering style: " + data[0].fingering)
+            strings.text("Strings: " + data[0].strings)
 
             //TODO: Add chord name to box
-            userSelectBox.text("Fingering style: " + data[0].fingering + " Strings: " + data[0].strings)
+            // userSelectBox.text("Fingering style: " + data[0].fingering + " Strings: " + data[0].strings)
             //Adding user select fingering diagram icon to page
             var chordIcon = $("#icon")
             $(chordIcon).attr("src", "assets/images/chordImg/" + userSelect + ".png");
@@ -87,9 +92,9 @@ var getStorage = [];
 function getLocalS() {
     if (localStorage.getItem("FavChord")) {
         var getStorage = JSON.parse(localStorage.getItem("FavChord"));
-        var saveChord = $("<div>");
-        saveChord.text("current saved " + getStorage[0]);
-        userSelectBox.append(saveChord)
+        // var saveChord = $("<div>");
+        // saveChord.text("current saved " + getStorage[0]);
+        // userSelectBox.append(saveChord)
         // console.log(typeof getStorage);
         // console.log(getStorage[0]);
         userSelect = JSON.parse(localStorage.getItem("FavChord"))
