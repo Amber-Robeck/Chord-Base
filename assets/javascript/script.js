@@ -18,10 +18,34 @@ button.on("click", function () {
 //click to save user content
 ddContent.on("click", function (event) {
     userSelect = event.target.innerText
-    // console.log(userSelect)
     dditem.toggle('is-active');
     saveLocalS(userSelect);
-    var insBtn = $('#scapiobjid1').attr('chord', userSelect)
+    console.log(userSelect.slice(0, 1))
+    var chordAb = $('#scapiobjid1')
+
+
+    var chordA = $('#scapiobjid2')
+    // .attr('chord', userSelect)
+    // if (chords == userSelect) {
+    // chords.toggle('is-block');
+
+
+    //event.target on userselect
+    console.log(chordA);
+    $(chordA).show();
+    // $(chordAb).show();
+    // $(chords).css("display", "is-block")
+
+    // } console.log(userSelect)
+
+    // $("#soundButton").append(`<ins class="scales_chords_api" chord="${userSelect}" instrument="guitar" output="sound"></ins>`)
+
+    // <ins class="scales_chords_api" chord="D#m(maj9)" instrument="guitar" output="sound"></ins>
+    // var insBtn = $('#scapiobjid1').attr('chord', userSelect)
+    // console.log($('#scapiobjid1').children())
+
+
+    // https://www.scales-chords.com/chord-sounds/snd-guitar-chord-Dsm-maj9.mp3
     //TODO:Change source to current mp3 track
     getApi();
 })
