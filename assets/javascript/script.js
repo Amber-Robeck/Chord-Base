@@ -71,6 +71,7 @@ function getApi() {
             var chordIcon = $("#icon")
             // $(chordIcon).attr("src", "assets/images/chordImg/" + userSelect.slice(0, 1) + ".png");
             $(chordIcon).attr("src", "assets/images/chordImg/" + userSelect + ".png");
+            console.log(userSelect);
         })
 }
 
