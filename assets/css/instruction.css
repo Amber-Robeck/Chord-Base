@@ -1,0 +1,33 @@
+section {
+    background-image: url(https://cdn.pixabay.com/photo/2015/10/29/14/44/sunset-1012477_1280.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    min-height: 180px;
+    border-bottom: black solid 5px;
+}
+
+.container {
+    margin: 20px;
+}
+
+#homeButton {
+   float: right;
+   margin-left: 20px;
+}
+
+#text {
+    float: right;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+}
+
+footer {
+    text-align: center;
+}
+
+
+
+
+
