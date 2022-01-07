@@ -69,7 +69,8 @@ function getApi() {
 
             //TODO: make sure the variations of chords come up
             var chordIcon = $("#icon")
-            $(chordIcon).attr("src", "assets/images/chordImg/" + userSelect.slice(0, 1) + ".png");
+            // $(chordIcon).attr("src", "assets/images/chordImg/" + userSelect.slice(0, 1) + ".png");
+            $(chordIcon).attr("src", "assets/images/chordImg/" + userSelect + ".png");
         })
 }
 
