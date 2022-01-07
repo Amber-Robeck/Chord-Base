@@ -3,13 +3,13 @@ section {
     background-repeat: no-repeat;
     background-size:cover;
     background-position:center;
-    display:flex;
-    min-height: 180px;
+    min-height: 250px;
     border-bottom: black solid 5px;
 }
 
 .container {
-    margin: 20px;
+    margin: auto;
+    margin-top: 40px;
 }
 
 #homeButton {
@@ -25,6 +25,11 @@ section {
 
 footer {
     text-align: center;
+    margin-top: 40px;
+}
+
+.container {
+    align-items: center;
 }
 
 
