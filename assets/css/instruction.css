@@ -3,8 +3,7 @@ section {
     background-repeat: no-repeat;
     background-size:cover;
     background-position:center;
-    display:flex;
-    min-height: 180px;
+    min-height: 250px;
     border-bottom: black solid 5px;
 }
 
