@@ -34,10 +34,19 @@ ddContent.on("click", function (event) {
 
 
     //event.target on userselect
+    // if (showedChord.show()) {
+    //     showedChord.hide();
+    // }
+
     console.log(userSelectId);
+    var lastChord = (baseId + userSelectId);
+    console.log(lastChord)
+
+    var showedChord = $(baseId + userSelectId).show();
 
 
-    $(baseId + userSelectId).show();
+
+
     // $(chordAb).show();
     // $(chords).css("display", "is-block")
 
@@ -59,24 +68,21 @@ function getApi() {
     fetch("https://api.uberchord.com/v1/chords/" + userSelect)
         .then(function (response) {
             return response.json();
-            // console.log(response.json());
+
         }).then(function (data) {
-            console.log(data)
 
-            //number of what finger to use on each string
-            console.log(data[0].fingering)
-            //what strings are being pressed on what fret down to make chord
             //adding api data to user screen
-            var name = $("#apiName")
-            var strings = $("#apiStrings")
-            var fingering = $("#apiFingering")
-            fingering.text("Fingering style: " + data[0].fingering)
-            strings.text("Strings: " + data[0].strings)
-
-            //TODO: Add chord name to box
-            // userSelectBox.text("Fingering style: " + data[0].fingering + " Strings: " + data[0].strings)
+            //name of chord
+            var name = $("#apiName");
+            name.text("Chord:" + data[0].chordName);
+            //what strings are being pressed on what fret down to make chord
+            var strings = $("#apiStrings");
+            strings.text("Strings: " + data[0].strings);
+            //number of what finger to use on each string
+            var fingering = $("#apiFingering");
+            fingering.text("Fingering style: " + data[0].fingering);
             //Adding user select fingering diagram icon to page
-            var chordIcon = $("#icon")
+            var chordIcon = $("#icon");
             $(chordIcon).attr("src", "assets/images/chordImg/" + userSelect + ".png");
             console.log(userSelect);
         })
