@@ -51,7 +51,7 @@ ddContent.on("click", function (event) {
 })
 
 function getApi() {
-    fetch("https://api.uberchord.com/v1/chords/" + userSelect.slice(0, 1))
+    fetch("https://api.uberchord.com/v1/chords/" + userSelect)
         .then(function (response) {
             return response.json();
             // console.log(response.json());
@@ -66,10 +66,7 @@ function getApi() {
             //TODO: Add chord name to box
             userSelectBox.text("Fingering style: " + data[0].fingering + " Strings: " + data[0].strings)
             //Adding user select fingering diagram icon to page
-
-            //TODO: make sure the variations of chords come up
             var chordIcon = $("#icon")
-            // $(chordIcon).attr("src", "assets/images/chordImg/" + userSelect.slice(0, 1) + ".png");
             $(chordIcon).attr("src", "assets/images/chordImg/" + userSelect + ".png");
             console.log(userSelect);
         })
