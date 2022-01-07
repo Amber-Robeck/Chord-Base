@@ -18,21 +18,26 @@ button.on("click", function () {
 //click to save user content
 ddContent.on("click", function (event) {
     userSelect = event.target.innerText
+    userSelectId = event.target.id;
     dditem.toggle('is-active');
     saveLocalS(userSelect);
     // console.log(userSelect.slice(0, 1))
-    var chordAb = $('#scapiobjid1')
+    var baseId = "#scapiobjid";
+
+    // var chordAb = $('#scapiobjid1')
 
 
-    var chordA = $('#scapiobjid2')
+    // var chordA = $('#scapiobjid2')
     // .attr('chord', userSelect)
     // if (chords == userSelect) {
     // chords.toggle('is-block');
 
 
     //event.target on userselect
-    console.log(chordA);
-    $(chordA).show();
+    console.log(userSelectId);
+
+
+    $(baseId + userSelectId).show();
     // $(chordAb).show();
     // $(chords).css("display", "is-block")
 
