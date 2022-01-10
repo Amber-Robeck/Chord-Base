@@ -9,7 +9,7 @@ section  {
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 main{
-    background: url(../images/barline2.png);
+    background: url(../images/woodenguitar.jpg);
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
@@ -26,6 +26,7 @@ main{
     align-items: center; */
     font-weight: bold;
     font-size: 24px;
+    color: whitesmoke;
 }
 .notes img{
     width: 50px;
