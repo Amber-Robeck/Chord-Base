@@ -20,6 +20,9 @@ main{
     align-items: center;
     margin-top: 10px;
 }
+#icon {
+    border-radius: 20%;
+}
 #userSelectBox {
     /* display: flex;
     justify-content: center;
